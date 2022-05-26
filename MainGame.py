@@ -5,7 +5,7 @@ from CurrencyRouletteGame import Currency_RouletteGame
 from time import sleep
 from os import system
 
-# Run this from the command line  "python MainGame.py" !!!
+# Run this from the command line  "python MainGame.py" !!!!!
 
 system('cls')
 print(welcome("Doron"))
