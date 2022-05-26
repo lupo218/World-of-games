@@ -6,7 +6,7 @@ from time import sleep
 from os import system
 
 # Run this from the command line  "python MainGame.py" !!!
-1
+
 system('cls')
 print(welcome("Doron"))
 data = load_game()
