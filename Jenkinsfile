@@ -13,9 +13,12 @@ pipeline {
         }
     }
     stages{
-        steps('Buld docker'){
-            sh 'docker compose up -d --no-color --wait'
-            sh 'docker compose ps'
+        stage('Buld docker'){
+            steps {
+                sh 'docker compose up -d --no-color --wait'
+                sh 'docker compose ps'
+
+            }
         }
     }
 }
