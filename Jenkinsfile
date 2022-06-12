@@ -12,7 +12,7 @@ pipeline {
             }
         }
     }
-    stages{
+    stages {
         stage('Buld docker'){
             steps {
                 sh 'docker compose up -d --no-color --wait'
