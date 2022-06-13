@@ -3,4 +3,4 @@ services:
   wog:
     build: .
     ports:
-      - "80:30000"
+      - "8777:30000"
