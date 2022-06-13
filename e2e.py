@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-def Check_url(url,xpt):
+def test_scores_service(url,xpt):
     ## Setup chrome options
     chrome_options = Options()
     chrome_options.add_argument("--headless") # Ensure GUI is off
@@ -29,6 +29,14 @@ def Check_url(url,xpt):
     browser.quit()
     return result
 
+def main_function(url,xpt):
+    result = test_scores_service(url,xpt)
+    if int(result) >1 and int(result)< 1000:
+        return True
+    else:
+        return False
 
-result = Check_url("http://192.168.0.5/",'/html/body/h1/div')
+
+
+result = test_scores_service("http://192.168.0.5/",'/html/body/h1/div')
 print(result)
