@@ -31,7 +31,7 @@ def test_scores_service(url,xpt):
 
 def main_function(url,xpt):
     result = test_scores_service(url,xpt)
-    if int(result) >1:
+    if int(result) <1:
         return True
     else:
         return False
