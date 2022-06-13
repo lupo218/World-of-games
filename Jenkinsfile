@@ -18,5 +18,11 @@ pipeline {
 
             }
         }
+        stage('Test URL'){
+            steps {
+                sh 'ls'
+
+            }
+        }
     }
 }
