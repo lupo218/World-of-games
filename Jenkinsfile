@@ -21,7 +21,12 @@ pipeline {
         }
         stage('Test URL'){
             steps {
-                sh '/usr/bin/python3 e2e.py'
+                sh '''
+                    if [ /usr/bin/python3 e2e.py -eq False ]
+                    then 
+                        echo "found"
+                    fi
+                  '''
 
             }
         }
