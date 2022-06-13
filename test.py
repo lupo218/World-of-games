@@ -21,7 +21,7 @@ def Check_url(url,xpt):
 
     # Extract description from page and print
     description = browser.find_element(By.XPATH, xpt)
-    print(f"{description.text}")
+    result =None
     result = description.text
 
     #Wait for 10 seconds
