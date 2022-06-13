@@ -12,6 +12,8 @@ def test_scores_service(url,xpt):
     chrome_options.add_argument('--headless')
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--remote - debugging - port = 9222")
+
 
     # Set path to chromedriver as per your configuration
     webdriver_service = Service("/usr/bin/chromedriver")
