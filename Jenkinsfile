@@ -12,6 +12,14 @@ pipeline {
                 '''
             }
         }
+        stage('cleen old') {
+            steps {
+                sh '''
+                    docker rm -f  $(docker ps |grep docker_from_git_wog |awk '{print $1}')
+                    docker rmi -f  $(docker images |grep docker_from_git_wog |awk '{print $1}')
+                '''
+            }
+        }
         stage('Buld docker'){
             steps {
                 sh 'docker compose up -d --no-color --wait'
