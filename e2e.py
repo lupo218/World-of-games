@@ -30,27 +30,3 @@ print(f"{description.text}")
 #Wait for 10 seconds
 time.sleep(10)
 browser.quit()
-
-
-
-
-
-
-
-
-
-
-
-
-
-    my_driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
-    browser = my_driver(service=webdriver_service, options=chrome_options)
-    browser.get(url)
-    check = browser.find_element(By.XPATH, '/html/body/h1/div')
-    return check.text
-
-#
-# def Check_resulte(url,min,max):
-#
-
-print(Check_URL('http://192.168.0.5/'))
