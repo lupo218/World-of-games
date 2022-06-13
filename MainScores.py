@@ -1,17 +1,15 @@
 from flask import Flask, render_template
 import Utils
 app = Flask(__name__)
-app.config['TEMPLATES_AUTO_RELOAD'] = True
-
 
 try:
-    with open(Utils.SCORES_FILE_NAME, "r") as f:  # red
-        points = int(f.read())  # get val
     @app.route('/')
     def index():
+        with open(Utils.SCORES_FILE_NAME, "r") as f:  # red
+            points = int(f.read())  # get val
         return render_template('index.html',SCORE=points)
     if __name__ == '__main__':
-        app.run('0.0.0.0', debug=True, port=30000)
+        app.run('0.0.0.0', debug=True,port=30000)
 except:
     @app.errorhandler(404)
     def not_found(e):
