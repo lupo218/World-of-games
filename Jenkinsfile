@@ -14,15 +14,16 @@ pipeline {
         }
         stage('cleen old') {
             steps {
-                try {
-                    sh 'exit 1'
+                script {
+                    try {
+                        sh 'exit 1'
+                    }
+                    catch (exc) {
+                        echo 'Something failed, I should sound the klaxons!'
+                        throw
+                    }
                 }
-                catch (exc) {
-                    echo 'Something failed, I should sound the klaxons!'
-                    throw
-                }
-            }
-        }
+        }   }
         stage('Buld docker'){
             steps {
                 sh 'docker compose up -d --no-color --wait'
