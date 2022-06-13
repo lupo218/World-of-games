@@ -1,4 +1,4 @@
-import time
+import time,sys
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -36,4 +36,8 @@ def main_function(url,xpt):
     else:
         return False
 
-return main_function("http://192.168.0.5/",'/html/body/h1/div')
+
+if main_function("http://192.168.0.5/",'/html/body/h1/div'):
+    sys.exit(0)
+else:
+    sys.exit(-1)
