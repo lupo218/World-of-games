@@ -22,7 +22,7 @@ pipeline {
                         '''
                     }
                     catch (all) {
-                        echo 'Something failed, I should sound the klaxons!'
+                        echo 'No old docker to delete'
                     }
                 }
         }   }
