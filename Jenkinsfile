@@ -30,12 +30,9 @@ pipeline {
         stage('Test URL'){
             steps {
                 sh '''
-                    if [ /usr/bin/python3 e2e.py -eq False ]
-                    then 
-                        echo "found"
-                    else
-                        echo "Error"
-                    fi
+                    var = /usr/bin/python3 e2e.py
+                    echo $var
+
                   '''
 
             }
