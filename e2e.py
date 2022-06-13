@@ -31,13 +31,9 @@ def test_scores_service(url,xpt):
 
 def main_function(url,xpt):
     result = test_scores_service(url,xpt)
-    print(result)
     if int(result) >=0 and int(result) <=1000:
         return True
     else:
         return False
 
-
-
-result = main_function("http://192.168.0.5/",'/html/body/h1/div')
-print(result)
+return main_function("http://192.168.0.5/",'/html/body/h1/div')
