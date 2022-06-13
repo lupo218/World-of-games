@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('check docker') {
+        stage('check docker & python') {
             steps {
                 sh '''#!/bin/bash
                 docker version
@@ -12,7 +12,7 @@ pipeline {
                 '''
             }
         }
-        stage('cleen old') {
+        stage('cleen old docker') {
             steps {
                 script {
                     try {
