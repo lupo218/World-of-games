@@ -22,11 +22,12 @@ def Check_url(url,xpt):
     # Extract description from page and print
     description = browser.find_element(By.XPATH, xpt)
     print(f"{description.text}")
+    result = description.text
 
     #Wait for 10 seconds
     time.sleep(2)
     browser.quit()
-    return description.text
+    return result
 
 
 result = Check_url("http://192.168.0.5/",'/html/body/h1/div')
