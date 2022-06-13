@@ -14,12 +14,18 @@ pipeline {
         }
         stage('cleen old') {
             steps {
+                try {
                 sh '''#!/bin/bash
-                    try {
                     docker rm -f  $(docker ps |grep docker_from_git_wog |awk '{print $1}')
                     docker rmi -f  $(docker images |grep docker_from_git_wog |awk '{print $1}')
                     }catch {echo 'I did not find old machines'}
                 '''
+                }
+                catch (exc) {
+                    echo 'Something failed, I should sound the klaxons!'
+                throw
+                    }           
+
             }
         }
         stage('Buld docker'){
