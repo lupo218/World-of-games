@@ -1,6 +1,10 @@
 from selenium import webdriver
-from  selenium.webdriver.common.by import  By
-
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+chrome_options = Options()
+chrome_options.add_argument("--headless") # Ensure GUI is off
+chrome_options.add_argument("--no-sandbox")
 
 def Check_URL(url):
     my_driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
