@@ -37,7 +37,4 @@ def main_function(url,xpt):
         return False
 
 
-if main_function("http://192.168.0.5/",'/html/body/h1/div'):
-    sys.exit(0)
-else:
-    sys.exit(-1)
+print(main_function("http://192.168.0.5/",'/html/body/h1/div'))
