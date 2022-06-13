@@ -31,9 +31,9 @@ pipeline {
             steps {
                 sh '''#!/bin/bash
                     var1=$(/usr/bin/python3 e2e.py 2>&1)
-                    if [ var1 -eq 'False']
+                    if [ var1='False' ]
                     then
-                        currentBuild.result = 'FAILURE'
+                        currentBuild.result='FAILURE'
                         echo "ggggg"
                     fi
                     
