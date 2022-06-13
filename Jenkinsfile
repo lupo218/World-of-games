@@ -18,12 +18,5 @@ pipeline {
 
             }
         }
-        stage('check URL') {
-            steps {
-                sh '''
-                    python3 e2e.py
-                '''
-            }
-        }
     }
 }
