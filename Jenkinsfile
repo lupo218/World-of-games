@@ -31,7 +31,7 @@ pipeline {
             steps {
                 sh '''#!/bin/bash
                     var1 = $(/usr/bin/python3 e2e.py 2>&1)
-                    echo var1
+                    echo $var1
 
                   '''
 
