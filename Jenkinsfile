@@ -14,9 +14,11 @@ pipeline {
         }
         stage('cleen old') {
             steps {
-                sh '''
+                sh '''#!/bin/bash
+                    try {
                     docker rm -f  $(docker ps |grep docker_from_git_wog |awk '{print $1}')
                     docker rmi -f  $(docker images |grep docker_from_git_wog |awk '{print $1}')
+                    }catch {echo 'I did not find old machines'}
                 '''
             }
         }
@@ -33,16 +35,13 @@ pipeline {
                     var1=$(/usr/bin/python3 e2e.py 2>&1)
                     if [ var1='False' ]
                     then
-                        echo 'Error on URL check !!!'
+                        echo 'Error on Url check !!!'
                         exit 1
                     else
-                        echo 'URL check passed'
+                        echo 'Url check passed'
                         exit 0
                     fi
-                    
-
                   '''
-
             }
         }
     }
