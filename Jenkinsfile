@@ -33,8 +33,7 @@ pipeline {
                     var1=$(/usr/bin/python3 e2e.py 2>&1)
                     if [ var1='False' ]
                     then
-                        currentBuild.result='FAILURE'
-                        echo "ggggg"
+                        exit 1
                     fi
                     
 
