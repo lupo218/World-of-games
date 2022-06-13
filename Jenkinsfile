@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Test URL'){
             steps {
-                sh 'ls'
+                sh 'python3 e2e.py'
 
             }
         }
