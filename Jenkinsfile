@@ -17,7 +17,7 @@ pipeline {
                 try {
                     sh 'exit 1'
                 }
-                atch (exc) {
+                catch (exc) {
                     echo 'Something failed, I should sound the klaxons!'
                     throw
                 }
