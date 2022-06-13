@@ -38,5 +38,5 @@ def main_function(url,xpt):
 
 
 
-result = test_scores_service("http://192.168.0.5/",'/html/body/h1/div')
+result = main_function("http://192.168.0.5/",'/html/body/h1/div')
 print(result)
