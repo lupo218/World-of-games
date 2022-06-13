@@ -10,6 +10,8 @@ def test_scores_service(url,xpt):
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument('--headless')
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--disable-dev-shm-usage")
 
     # Set path to chromedriver as per your configuration
     webdriver_service = Service("/usr/bin/chromedriver")
