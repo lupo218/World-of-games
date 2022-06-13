@@ -27,7 +27,7 @@ def test_scores_service(url,xpt):
     result =None
     result = description.text
 
-    #Wait for 10 seconds
+    #Wait for 10 seconds.
     time.sleep(2)
     browser.quit()
     return result
