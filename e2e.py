@@ -32,7 +32,7 @@ def test_scores_service(url,xpt):
 def main_function(url,xpt):
     result = test_scores_service(url,xpt)
     print(result)
-    if int(result) >=1 and int(result) <=1000:
+    if int(result +1) >=1 and int(result +1) <=1000:
         return True
     else:
         return False
