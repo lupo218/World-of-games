@@ -24,3 +24,6 @@ def Check_URL():
     time.sleep(2)
     browser.quit()
     return description.text
+
+
+print(Check_URL())
