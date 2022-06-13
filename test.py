@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-def Check_url():
+def Check_url(url):
     ## Setup chrome options
     chrome_options = Options()
     chrome_options.add_argument("--headless") # Ensure GUI is off
@@ -17,7 +17,7 @@ def Check_url():
     browser = webdriver.Chrome(service=webdriver_service, options=chrome_options)
 
     # Get page
-    browser.get("http://192.168.0.5/")
+    browser.get(url)
 
     # Extract description from page and print
     description = browser.find_element(By.XPATH, '/html/body/h1/div')
@@ -27,4 +27,4 @@ def Check_url():
     time.sleep(2)
     browser.quit()
 
-Check_url()
+Check_url("http://192.168.0.5/")
