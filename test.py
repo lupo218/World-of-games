@@ -26,6 +26,8 @@ def Check_url(url,xpt):
     #Wait for 10 seconds
     time.sleep(2)
     browser.quit()
+    return description.text
+
 
 result = Check_url("http://192.168.0.5/",'/html/body/h1/div')
-print(result.text)
+print(result)
