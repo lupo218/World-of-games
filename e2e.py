@@ -3,7 +3,7 @@ from  selenium.webdriver.common.by import  By
 
 
 def Check_URL(url):
-    my_driver = webdriver.Chrome(executable_path='G:\chromedriver_win32\chromedriver.exe')
+    my_driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
     my_driver.get(url)
     check = my_driver.find_element(By.XPATH, '/html/body/h1/div')
     return check.text
