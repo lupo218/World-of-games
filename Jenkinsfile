@@ -30,7 +30,7 @@ pipeline {
         stage('Test URL'){
             steps {
                 sh '''
-                    var = /usr/bin/python3 e2e.py
+                    var = $(/usr/bin/python3 e2e.py)
                     echo $var
 
                   '''
