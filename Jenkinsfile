@@ -7,7 +7,8 @@ pipeline {
                 sh '''
                 docker version
                 docker info
-                docker compose version 
+                docker compose version
+                pip install -r /app/requirements.txt 
                 '''
             }
         }
