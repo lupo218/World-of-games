@@ -18,9 +18,8 @@ pipeline {
                     try {
                         sh 'exit 1'
                     }
-                    catch (exc) {
+                    catch (all) {
                         echo 'Something failed, I should sound the klaxons!'
-                        throw
                     }
                 }
         }   }
