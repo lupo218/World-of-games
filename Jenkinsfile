@@ -34,8 +34,9 @@ pipeline {
                     if [ var1 -eq 'False']
                     then
                         currentBuild.result = 'FAILURE'
+                        echo "ggggg"
                     fi
-                    echo $var1
+                    
 
                   '''
 
