@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('check docker') {
             steps {
-                sh '''
+                sh '''#!/bin/bash
                 docker version
                 docker info
                 docker compose version
@@ -16,7 +16,10 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'exit 1'
+                        sh '''#!/bin/bash
+                        docker rm -f  $(docker ps |grep docker_from_git_wog |awk '{print $1}')
+                        docker rmi -f  $(docker images |grep docker_from_git_wog |awk '{print $1}')
+                        '''
                     }
                     catch (all) {
                         echo 'Something failed, I should sound the klaxons!'
